@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Score name:</strong>
+  <%= @rating_score.score_name %>
+  <div style="width:250px; height:auto">
+  <%= image_tag(@rating_score.score_emojis, style: 'width:100%') %>
+  </div>
+</p>
+
+<%= link_to 'Edit', edit_rating_score_path(@rating_score) %> |
+<%= link_to 'Back', rating_scores_path %>

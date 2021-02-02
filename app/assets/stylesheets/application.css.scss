@@ -1,0 +1,228 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//Default Page CSS
+* {
+	margin: 0;
+	padding: 0;
+	padding-right: 20px;
+	padding-bottom: 4px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5px;
+}
+
+body {
+	margin-left: 133px;
+}
+
+.starter {
+	text-align: center;
+}
+
+//Tweaking Bootstrap CSS to fit COntent
+.panel-primary {
+	border-color: white;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: none;
+	border-radius: 0px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	margin-top: -55px;
+}
+
+.panel-heading {
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: -10px;
+    width: 103%;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.panel-heading-feed {
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+    width: 103%;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -30px;
+}
+
+.panel-primary > .panel-heading {
+	color: darkslategrey;
+	background-color: white;
+	border: none;
+}
+
+
+.container {
+	width: 100%;
+	height: auto;
+}
+
+.textarea {
+	width: 685px;
+	height: 220px;
+	border: 3px solid black;
+}
+
+
+
+label {
+	padding-right: 77px;
+	padding-bottom: 20px;
+}
+
+.rate-options {
+	display: flex;
+	font-size: 23px;
+}
+.checkbox-inline {
+	padding-bottom: 20px;
+	margin-left: -25px;
+}
+
+.input text {
+	width: 188px;
+}
+
+.row {
+	margin-left: -15px;
+	margin-right: -40px;
+}
+
+.col-md-6 {
+	width: 80%;
+}
+
+.modal-title {
+	text-align: center;
+	margin: 0;
+	line-height: 1.428571429;
+	font-size: xx-large;
+	font-style: oblique;
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.3333333;
+	border-radius: 6px;
+	position: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.btn-default {
+	color: #150505;
+	background-color: #5291c7;
+	border-color: #060606;
+    width: 86px;
+    height: 42px;
+    font-size: 22px;
+}
+
+.modal-content {
+	position: relative;
+	background-color: #fff;
+
+	border-radius: 6px;
+	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	background-clip: padding-box;
+	outline: 0;
+	position: absolute;
+	top: 5px;
+	left: -35px;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+}
+
+.footer-msg {
+	font-style: italic;
+}
+
+#p-tag {
+	margin-left: 75px;
+}
+
+.rating-stars {
+	margin-left: 80px;
+}
+
+.header-modal {
+	font-size: 33px;
+	margin-left: 60px;
+}
+
+.btn-default {
+	color: #150505;
+	background-color: #5291c7;
+	border-color: #060606;
+	width: 70px;
+	height: 35px;
+}
+
+.modal-title {
+	text-align: center;
+	margin: 0;
+	line-height: 1.428571429;
+	font-size: xx-large;
+	font-style: oblique;
+}
+
+textarea:focus {
+	outline-color: blue;
+}
+
+
+//CSS to target Media Screens as high as 1581
+
+@media only screen and (max-width: 1581) {
+	.modal-content {
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+		width: inherit;
+		margin-left: 20px;
+		margin-top: 443px;
+	}
+
+	textarea {
+		width: 685px;
+		height: 220px;
+		color: blue;
+		font-size: x-large;
+		margin-left: 20px;
+	}
+
+	.form-check-label {
+		margin-left: 0;
+		font-size: 32px;
+		padding-bottom: 30px;
+		display: contents;
+	}
+}

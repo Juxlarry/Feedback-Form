@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nurse rate:</strong>
+  <%= @personnel_rating.nurse_rate %>
+</p>
+
+<p>
+  <strong>Receptionist rate:</strong>
+  <%= @personnel_rating.receptionist_rate %>
+</p>
+
+<p>
+  <strong>Pharmacist rate:</strong>
+  <%= @personnel_rating.pharmacist_rate %>
+</p>
+
+<p>
+  <strong>Doctor rate:</strong>
+  <%= @personnel_rating.doctor_rate %>
+</p>
+
+<p>
+  <strong>Lab rate:</strong>
+  <%= @personnel_rating.lab_rate %>
+</p>
+
+<p>
+  <strong>Cashier rate:</strong>
+  <%= @personnel_rating.cashier_rate %>
+</p>
+
+<p>
+  <strong>Staff rate:</strong>
+  <%= @personnel_rating.staff_rate %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @personnel_rating.comments %>
+</p>
+
+<%= link_to 'Edit', edit_personnel_rating_path(@personnel_rating) %> |
+<%= link_to 'Back', personnel_ratings_path %>

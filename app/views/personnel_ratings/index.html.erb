@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Personnel Ratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nurse rate</th>
+      <th>Receptionist rate</th>
+      <th>Pharmacist rate</th>
+      <th>Doctor rate</th>
+      <th>Lab rate</th>
+      <th>Cashier rate</th>
+      <th>Staff rate</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personnel_ratings.each do |personnel_rating| %>
+      <tr>
+        <td><%= personnel_rating.nurse_rate %></td>
+        <td><%= personnel_rating.receptionist_rate %></td>
+        <td><%= personnel_rating.pharmacist_rate %></td>
+        <td><%= personnel_rating.doctor_rate %></td>
+        <td><%= personnel_rating.lab_rate %></td>
+        <td><%= personnel_rating.cashier_rate %></td>
+        <td><%= personnel_rating.staff_rate %></td>
+        <td><%= personnel_rating.comments %></td>
+        <td><%= link_to 'Show', personnel_rating %></td>
+        <td><%= link_to 'Edit', edit_personnel_rating_path(personnel_rating) %></td>
+        <td><%= link_to 'Destroy', personnel_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personnel Rating', new_personnel_rating_path %>

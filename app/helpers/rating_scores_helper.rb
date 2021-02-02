@@ -1,0 +1,2 @@
+module RatingScoresHelper
+end

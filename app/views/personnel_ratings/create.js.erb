@@ -1,0 +1,14 @@
+<!--Call Modal and render JS Page -->
+$("#myModal").find(".modal-content").html("<%= escape_javascript (render 'personnel_ratings/create') %>");
+$("#myModal").modal();
+<!--Reset Radio Buttons -->
+$('#new_personnel_rating').trigger("reset");
+
+
+<!-- Extensive reset to reset all types of input. Not needed now....
+
+$('#new_personnel_rating').find(':input').not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
+
+-->
+
+

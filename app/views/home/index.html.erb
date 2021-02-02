@@ -1,0 +1,272 @@
+
+<%= simple_form_for @personnel_rating, id:'form-fm', remote:true do |f| %>
+<div class="container">
+    <div  class= "row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+             
+                <div class= "panel-heading"> 
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a href=""><%= link_to 'Admin', feedback_path %></a>
+                        </li>
+                    </ul>
+                    <%=  image_tag ("logo.png"), :style => "width: 600px" %>      
+                </div>
+                <div class="panel-body">
+                    <h1 class="form-header">Your Feedback Is Much Appreciated</h1>
+                    <div class="starter">
+                        <div class="form-row p-t-20">
+
+
+
+                        <!-- Receptionist Colection point in form -->
+                            
+                            <div class="form-check form-check-inline">
+
+                                <div class="form-check-label">
+                                    <p class="label-text"> How did you find the service provided at the reception? </p>
+                                </div>
+
+                                    <div class="form-check-input">
+                                        <label class="checkbox-inline">
+
+                                            <div class="rate-options">
+                                                <%= f.collection_radio_buttons(:receptionist_rate, RatingScore.all, :id, :score_emojis) do |b| %>
+                                                
+                                                    <%=  image_tag (b.text), :style => "width: 120px" %>
+                                                <% end %><br>
+                                            </div>
+                                            <div class="rate-options">
+                                                <%= f.collection_radio_buttons(:receptionist_rate, RatingScore.all, :id, :score_name) do |b| %>
+                                                    <%= b.label { b.radio_button + b.text  } %>
+                                                
+                                                <% end %>
+                                            </div>
+                                        </label>
+                                    </div>
+                            </div>
+
+                            <!-- receptionist Colection point ends-->
+                        
+                        
+                            <!-- Nurse Colection point in form -->
+                            <div class="form-check form-check-inline"> 
+                            
+                                <div class="form-check-label">
+                                    <p class="label-text"> How did you find the service provided by the nurses? </p>
+                                </div>
+
+                                    <div class="form-check-input">
+                                    
+                                        <label class="checkbox-inline" >
+                                            <div class="rate-options">
+                                                <%= f.collection_radio_buttons(:nurse_rate, RatingScore.all, :id, :score_emojis) do |b| %>
+                                                    <%=  image_tag (b.text), :style => "width: 120px" %>
+                                                <% end %><br>
+                                            </div>
+                                            <div class="rate-options">
+                                                <%= f.collection_radio_buttons(:nurse_rate, RatingScore.all, :id, :score_name) do |b| %>
+                                                <%= b.label { b.radio_button + b.text  } %>
+                                                
+                                            <% end %>
+                                            </div>
+                                        </label>                
+                                    </div> 
+                            </div>
+                        
+                            <!-- Nurse Colection Ends-->
+
+
+                            <!-- Doctors Colection point in form -->
+
+                            <div class="form-check form-check-inline">
+                                <div class="form-check-label">
+                                   <p class="label-text"> How did you find the service provided by the doctors? </p>
+                                </div>
+                                <div class="form-check-input">
+                                    <label class="checkbox-inline">
+
+                                        <div class="rate-options">
+                                    <%= f.collection_radio_buttons(:doctor_rate, RatingScore.all, :id, :score_emojis) do |b| %>
+                                            
+                                            <%=  image_tag (b.text), :style => "width: 120px" %>
+                                        <% end %><br>
+                                        </div>
+                                        <div class="rate-options">
+                                    <%= f.collection_radio_buttons(:doctor_rate, RatingScore.all, :id, :score_name) do |b| %>
+                                            <%= b.label { b.radio_button + b.text  } %>
+                                            
+                                        <% end %>
+                                        </div>
+                                        
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Doctors Colection point ends -->
+
+
+
+                            <!-- Lab Colection point in form -->
+
+                            <div class="form-check form-check-inline">
+                                <div class="form-check-label">
+                                   <p class="label-text"> How did you find the service provided at the lab? </p>
+                                </div>
+                                <div class="form-check-input">
+                                    <label class="checkbox-inline">
+
+                                        <div class="rate-options">
+                                            <%= f.collection_radio_buttons(:lab_rate, RatingScore.all, :id, :score_emojis) do |b| %>
+                                        
+                                                <%=  image_tag (b.text), :style => "width: 120px" %>
+                                            <% end %><br>
+                                    </div>
+                                    <div class="rate-options">
+                                        <%= f.collection_radio_buttons(:lab_rate, RatingScore.all, :id, :score_name) do |b| %>
+                                            <%= b.label { b.radio_button + b.text  } %>
+                                        
+                                        <% end %>
+                                    </div>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!-- Lab Colection point ends-->
+                            
+
+                            <!-- Pharmacy Colection point in form -->
+
+                            <div class="form-check form-check-inline">
+
+                                <div class="form-check-label">
+                                    <p class="label-text"> How did you find the service provided at the pharmacy? </p>
+                                </div>
+
+                                <div class="form-check-input">
+                                    <label class="checkbox-inline">
+                                        <div class="rate-options">
+                                            <%= f.collection_radio_buttons(:pharmacist_rate, RatingScore.all, :id, :score_emojis) do |b| %>
+                                                <%=  image_tag (b.text), :style => "width: 120px" %>
+                                            <% end %><br>
+                                        </div>
+                                        <div class="rate-options">
+                                            <%= f.collection_radio_buttons(:pharmacist_rate, RatingScore.all, :id, :score_name) do |b| %>
+                                                <%= b.label { b.radio_button + b.text  } %>
+                                            
+                                            <% end %>
+                                        </div>                         
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Pharmacy Colection point ends -->
+                            
+                                    
+
+                            <!-- Cashier Colection point in form -->
+
+
+                            <div class="form-check form-check-inline">
+                                <div class="form-check-label">
+                                    <p class="label-text"> How did you find the service provided by the cashier? </p>
+                                </div>
+                                <div class="form-check-input">
+                                    <label class="checkbox-inline">
+                                        <div class="rate-options">
+                                            <%= f.collection_radio_buttons(:cashier_rate, RatingScore.all, :id, :score_emojis) do |b| %>
+                                        
+                                                <%=  image_tag (b.text), :style => "width: 120px" %>
+                                            <% end %><br>
+                                        </div>
+                                        <div class="rate-options">
+                                            <%= f.collection_radio_buttons(:cashier_rate, RatingScore.all, :id, :score_name) do |b| %>
+                                                <%= b.label { b.radio_button + b.text  } %>
+                                            <% end %>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Cashier Colection point ends -->
+
+
+
+                            <!-- General Collection point in form -->
+                                
+                            <div class="form-check form-check-inline">
+                                <div class="form-check-label">
+                                    <p class="label-text"> How did you find the service provided by the general staff? </p>
+                                </div>
+                                <div class="form-check-input">
+                                    <label class="checkbox-inline">
+                                        <div class="rate-options">
+                                            <%= f.collection_radio_buttons(:staff_rate, RatingScore.all, :id, :score_emojis) do |b| %>
+                                        
+                                                <%=  image_tag (b.text), :style => "width: 120px" %>
+                                            <% end %><br>
+                                        </div>
+                                        <div class="rate-options">
+                                            <%= f.collection_radio_buttons(:staff_rate, RatingScore.all, :id, :score_name) do |b| %>
+                                                <%= b.label { b.radio_button + b.text  } %>
+                                            <% end %>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- General Staff Colection point ends -->
+
+                            <!-- COmments/ Recommendations Colection point in form -->
+
+                            <div class="form-check form-check-inline">
+                                <div class="form-check-label">
+                                    <p class="label-text"> Any other recommendations or suggestions? </p>
+                                </div>
+                                
+                                    
+                                        <%= f.input :comments , :label => false %>
+                            </div>
+
+                            <!-- Comments Colection point ends -->
+
+
+                            <!-- Form Submit Button-->
+
+
+                             <%=f.button :submit, 'Send Feedback',  class: 'btn btn-primary btn-lg', id: 'submitBTn',  input_html:  {style: "text-align: center; "} %> 
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+
+
+
+
+<!-- Modal Section  -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Brittania Thanks You</h4>
+      </div>
+      <div class="modal-body"> 
+           
+
+           
+      </div>
+      <div class="modal-footer">
+        <button id="submikBTN" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

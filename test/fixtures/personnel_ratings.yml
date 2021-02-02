@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nurse_rate: 1
+  receptionist_rate: 1
+  pharmacist_rate: 1
+  doctor_rate: 1
+  lab_rate: 1
+  cashier_rate: 1
+  staff_rate: 1
+  comments: MyText
+
+two:
+  nurse_rate: 1
+  receptionist_rate: 1
+  pharmacist_rate: 1
+  doctor_rate: 1
+  lab_rate: 1
+  cashier_rate: 1
+  staff_rate: 1
+  comments: MyText

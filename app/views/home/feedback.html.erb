@@ -1,0 +1,165 @@
+
+<!--Data End to Tabulate the Feedbacks received  -->
+<!-- 
+    **************************************************** Table Displays Feedback Feed from fORM *************************
+    ***************************Page Header with Logo******************
+
+    ********************************Data Area *******************************
+
+    ******************************* Pagination ******************************
+
+-->
+
+                    <div class= "panel-heading-feed"> 
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                           <a href=""> <%=link_to "Home", home_index_path %> </a>
+                        </li>
+                    </ul>
+                    <%=  image_tag ("logo.png"), :style => "width: 600px" %>      
+                </div>
+            
+
+                    <h2 class="header">Feedback Table</h2>
+                    
+                    <div class="table-wrapper">
+                        <table class="fl-table">
+                            <thead>
+                            <tr>
+                                <th >Date</th>
+                                <th >Receptionist rate</th>
+                                <th >Nurse rate</th>
+                                <th >Doctor rate</th>
+                                 <th >Lab rate</th>
+                                <th >Pharmacist rate</th>
+                                <th >Cashier rate</th>
+                                <th >Staff rate</th>
+                                <th >Comments</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                                <%  @personnel_ratings.each do |personnel_rating| %>
+                            <tr >
+                                <td><%= personnel_rating.created_at.strftime("%B %d %Y, %H:%M")%></td>
+
+
+                                <!--Looping through possible display rates for receptionist rating -->
+
+                                <% if personnel_rating.receptionist_rate == 1 %>
+                                <td> BAD </td>
+                                <% elsif personnel_rating.receptionist_rate == 2 %>
+                                <td> OKAY </td>
+                                <% elsif personnel_rating.receptionist_rate == 3 %>
+                                <td> GOOD </td>
+                                <% elsif personnel_rating.receptionist_rate == 4 %>
+                                <td> GREAT </td>
+                                <%else%>
+                                <td> NONE</td>
+                                <%end%>
+
+                                <!--Looping through possible display rates for nurse rating -->
+
+                                <% if personnel_rating.nurse_rate == 1 %>
+                                <td> BAD </td>
+                                <% elsif personnel_rating.nurse_rate == 2 %>
+                                <td> OKAY </td>
+                                <% elsif personnel_rating.nurse_rate == 3 %>
+                                <td> GOOD </td>
+                                <% elsif personnel_rating.nurse_rate == 4 %>
+                                <td> GREAT </td>
+                                <%else%>
+                                <td> NONE</td>
+                                <%end%>
+
+                                 <!--Looping through possible display rates for doctor rating -->
+
+                                <% if personnel_rating.doctor_rate  == 1 %>
+                                <td> BAD </td>
+                                <% elsif personnel_rating.doctor_rate  == 2 %>
+                                <td> OKAY </td>
+                                <% elsif personnel_rating.doctor_rate  == 3 %>
+                                <td> GOOD </td>
+                                <% elsif personnel_rating.doctor_rate  == 4 %>
+                                <td> GREAT </td>
+                                <%else%>
+                                <td> NONE</td>
+                                <%end%>
+
+                                 <!--Looping through possible display rates for lab rating -->
+
+                                <% if personnel_rating.lab_rate  == 1 %>
+                                <td> BAD </td>
+                                <% elsif personnel_rating.lab_rate  == 2 %>
+                                <td> OKAY </td>
+                                <% elsif personnel_rating.lab_rate  == 3 %>
+                                <td> GOOD </td>
+                                <% elsif personnel_rating.lab_rate  == 4 %>
+                                <td> GREAT </td>
+                                <%else%>
+                                <td> NONE</td>
+                                <%end%>
+                                
+                            
+                                <!--Looping through possible display rates for pharmacist rating -->
+
+                                <% if personnel_rating.pharmacist_rate == 1 %>
+                                <td> BAD </td>
+                                <% elsif personnel_rating.pharmacist_rate == 2 %>
+                                <td> OKAY </td>
+                                <% elsif personnel_rating.pharmacist_rate == 3 %>
+                                <td> GOOD </td>
+                                <% elsif personnel_rating.pharmacist_rate == 4 %>
+                                <td> GREAT </td>
+                                <%else%>
+                                <td> NONE</td>
+                                <%end%>
+
+                            
+
+
+                                <!--Looping through possible display rates for cashier rating -->
+
+                                <% if personnel_rating.cashier_rate  == 1 %>
+                                <td> BAD </td>
+                                <% elsif personnel_rating.cashier_rate  == 2 %>
+                                <td> OKAY </td>
+                                <% elsif personnel_rating.cashier_rate  == 3 %>
+                                <td> GOOD </td>
+                                <% elsif personnel_rating.cashier_rate  == 4 %>
+                                <td> GREAT </td>
+                                <%else%>
+                                <td> NONE</td>
+                                <%end%>
+
+
+                                <!--Looping through possible display rates for staff rating -->
+
+                                <% if personnel_rating.staff_rate  == 1 %>
+                                <td> BAD </td>
+                                <% elsif personnel_rating.staff_rate  == 2 %>
+                                <td> OKAY </td>
+                                <% elsif personnel_rating.staff_rate  == 3 %>
+                                <td> GOOD </td>
+                                <% elsif personnel_rating.staff_rate  == 4 %>
+                                <td> GREAT </td>
+                                <%else%>
+                                <td> NONE</td>
+                                <%end%>
+
+                                <!--Displaying Comments -->
+
+                                <td><%= personnel_rating.comments %></td>
+                                </tr>
+                            </tbody>
+
+                            <% end %>
+
+                        </table>
+                    </div>
+
+                     <div class="digg_pagination">
+                        <%= will_paginate @personnel_ratings, :page_links => false%>
+                     </div>           
+   
+
